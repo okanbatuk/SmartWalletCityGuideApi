@@ -2,9 +2,9 @@ const sql = require('../mssqlConnector');
 const mssql = require('mssql');
 
 const getCities = async () => {
-    const pool = sql.getConnection();
+    const pool = await sql.getConnection();
     try {
-        let result = await pool.request()
+       let result = await pool.request()
             .execute('SP_cities')
             return result;
     } catch (error) {
