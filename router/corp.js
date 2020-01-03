@@ -13,7 +13,7 @@ router.get('/city', async(req,res) => {
 })
 
 
-router.get('/corpInfo', async(req,res) => {
+router.post('/corpInfo', async(req,res) => {
     const corps = await corpInfo.getCorpInfo(req.body);
     if(corps.recordset[0].Status != 0) {
         res.json(corps.recordsets[0]);
